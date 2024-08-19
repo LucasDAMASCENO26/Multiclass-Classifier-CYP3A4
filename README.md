@@ -14,8 +14,7 @@ Para garantir a correta instalação das dependências e isolar o ambiente de de
 1. Clone o repositório:
 
 Primeiro, clone o repositório do projeto para o seu ambiente local:
-```git clone https://github.com/seu_usuario/seu_repositorio.git
-cd seu_repositorio
+```(https://github.com/LucasDAMASCENO26/Multiclass-Classifier-CYP3A4)
 ```
 
 2. Crie o ambiente virtual:
