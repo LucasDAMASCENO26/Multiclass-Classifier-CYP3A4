@@ -2,6 +2,21 @@
 
 # Previsão de Atividade Molecular - CYP3A4
 
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![Flask](https://img.shields.io/badge/Flask-2.1.1-blue.svg)
+![NumPy](https://img.shields.io/badge/NumPy-1.22.3-orange.svg)
+![Joblib](https://img.shields.io/badge/Joblib-1.1.0-green.svg)
+![RDKit](https://img.shields.io/badge/RDKit-2022.03.2.0-yellowgreen.svg)
+![Pickle](https://img.shields.io/badge/Pickle-5.0.0-red.svg)
+![Pandas](https://img.shields.io/badge/Pandas-1.4.2-yellow.svg)
+![PubChemPy](https://img.shields.io/badge/PubChemPy-1.0.4-lightblue.svg)
+![TQDM](https://img.shields.io/badge/TQDM-4.64.0-brightgreen.svg)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.0.2-yellow.svg)
+![LightGBM](https://img.shields.io/badge/LightGBM-3.3.2-orange.svg)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-3.5.1-lightgrey.svg)
+![Seaborn](https://img.shields.io/badge/Seaborn-0.11.2-red.svg)
+
+
 Este projeto é uma aplicação web desenvolvida em Python usando Flask, projetada para prever a atividade molecular de compostos em relação à enzima CYP3A4. A aplicação permite que o usuário desenhe moléculas ou insira a estrutura molecular em formato SMILES, utilizando o EPAM Ketcher, e obtenha uma previsão de atividade baseada em um modelo de aprendizado de máquina previamente treinado.
 
 
