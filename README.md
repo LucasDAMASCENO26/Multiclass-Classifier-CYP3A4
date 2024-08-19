@@ -29,12 +29,13 @@ Crie um ambiente virtual para o projeto. Isso garante que todas as dependências
 Antes de instalar as dependências, ative o ambiente virtual:
 
   No Windows:
-  ```venv\Scripts\activate
-```
+
+```venv\Scripts\activate```
 
   No macOS/Linux:
-  ```source venv/bin/activate 
-```
+  
+```source venv/bin/activate ```
+
 
 4. Instale as dependências:
 
