@@ -20,8 +20,8 @@ Primeiro, clone o repositório do projeto para o seu ambiente local:
 2. Crie o ambiente virtual:
 
 Crie um ambiente virtual para o projeto. Isso garante que todas as dependências sejam instaladas em um ambiente separado:
-```python3.10 -m venv venvv
-```
+```python3.10 -m venv venvv```
+
 
 3. Ative o ambiente virtual:
 
