@@ -49,6 +49,8 @@ O projeto está organizado da seguinte forma:
 
 app.py: Arquivo principal que contém a aplicação Flask e define as rotas da aplicação.
 
+multiclass_classification_model.ipynb: Jupyter Notebook que contém o código para o treinamento do modelo de classificação multiclasse, incluindo a análise de dados, pré-processamento, treinamento do modelo, e avaliação de desempenho.
+
 static/: Contém arquivos estáticos como CSS e JavaScript.
 
 lgbm_model.pkl: Arquivo com o modelo de aprendizado de máquina LightGBM treinado para previsão da atividade molecular.
