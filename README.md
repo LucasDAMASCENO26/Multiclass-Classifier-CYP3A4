@@ -47,10 +47,10 @@ O arquivo requirements.txt lista todas as bibliotecas necessárias para rodar o 
 ## Estrutura do Repositório
 O projeto está organizado da seguinte forma:
 
-  app.py: Arquivo principal que contém a aplicação Flask e define as rotas da aplicação.
-  static/: Contém arquivos estáticos como CSS e JavaScript.
-  lgbm_model.pkl: Arquivo com o modelo de aprendizado de máquina LightGBM treinado para previsão da atividade molecular.
-  label_encoder.pkl: Arquivo com o LabelEncoder utilizado para transformar as classes de saída (ativadores, inibidores, inativos) em labels numéricas.
+```app.py: Arquivo principal que contém a aplicação Flask e define as rotas da aplicação.```
+```static/: Contém arquivos estáticos como CSS e JavaScript.```
+```lgbm_model.pkl: Arquivo com o modelo de aprendizado de máquina LightGBM treinado para previsão da atividade molecular.```
+```label_encoder.pkl: Arquivo com o LabelEncoder utilizado para transformar as classes de saída (ativadores, inibidores, inativos) em labels numéricas.```
 
 ## Como Funciona
 
