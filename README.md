@@ -88,7 +88,7 @@ Ao clicar em "Enviar Molécula", o SMILES é capturado via JavaScript e enviado 
 
 Para rodar a aplicação web localmente:
 
-  Inicie o servidor o script app.py:
+  Inicie o script app.py:
 
 O comando iniciará o servidor de desenvolvimento Flask. Por padrão, a aplicação estará disponível no endereço 
 http://127.0.0.1:5000/.
