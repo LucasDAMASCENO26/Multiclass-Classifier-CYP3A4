@@ -1,0 +1,27 @@
+Flask
+numpy
+joblib
+rdkit
+pickle5
+pandas
+pubchempy
+tqdm
+scikit-learn
+lightgbm
+matplotlib
+seaborn
+
+
+    -> Explicação:
+Flask: Framework para construir a aplicação web.
+numpy: Biblioteca para manipulação de arrays e operações matemáticas.
+joblib: Biblioteca para salvar e carregar objetos Python, como modelos treinados.
+rdkit: Biblioteca para química computacional, usada para manipulação de moléculas e cálculo de descritores.
+pickle5: Biblioteca para serialização e desserialização de objetos Python (pode ser necessária dependendo do ambiente).
+pandas: Biblioteca para manipulação de dados, especialmente para trabalhar com DataFrames.
+pubchempy: Interface Python para PubChem, útil para acessar dados químicos online.
+tqdm: Biblioteca para mostrar barras de progresso.
+scikit-learn: Biblioteca para aprendizado de máquina, usada para pré-processamento de dados e modelos.
+lightgbm: Implementação do Gradient Boosting para modelos de classificação e regressão.
+matplotlib: Biblioteca para criação de gráficos e visualizações.
+seaborn: Biblioteca para visualização de dados baseada no Matplotlib, com estilos de gráficos aprimorados.

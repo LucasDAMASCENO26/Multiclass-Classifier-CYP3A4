@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Metadados essenciais para o documento HTML -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão de Atividade Molecular - CYP3A4</title>
+    <!-- Importa o arquivo CSS para estilização -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Estilos personalizados para a página */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        p.subtitle {
+            color: #2c3e50;
+            font-size: 18px;
+            text-align: center;
+            margin-top: -10px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo do contêiner do Ketcher */
+        #ketcher-container {
+            width: 80%;
+            max-width: 800px;
+            height: 450px;
+            margin: 20px 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid #3498db;
+        }
+
+        /* Estilo do botão de enviar */
+        #send-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #send-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Estilo do texto de previsão */
+        #prediction {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #34495e;
+        }
+
+        /* Estilo do rodapé */
+        footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #7f8c8d;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Título principal da página -->
+    <h1>Previsão de Atividade Molecular</h1>
+    <!-- Subtítulo explicativo da funcionalidade -->
+    <p class="subtitle">Classifique moléculas como ativadores, inibidores ou inativos do CYP3A4</p>
+
+    <!-- Contêiner para o Ketcher, onde o usuário pode desenhar a molécula -->
+    <div id="ketcher-container">
+        <iframe src="{{ url_for('static', filename='standalone/index.html') }}" id="ketcher-iframe"
+            style="width: 100%; height: 100%; border: none;"></iframe>
+    </div>
+
+    <!-- Botão para enviar a molécula desenhada para a previsão -->
+    <button id="send-button">Enviar Molécula</button>
+
+    <!-- Parágrafo onde o resultado da previsão será exibido -->
+    <p id="prediction">Resultado da Previsão: </p>
+
+    <!-- Rodapé com informações de contato -->
+    <footer>
+        <p>Para mais informações, entre em contato: <a href="mailto:lucas.damasceno.santos@icen.ufpa.br">lucas.damasceno.santos@icen.ufpa.br</a></p>
+    </footer>
+
+    <script>
+        // Adiciona um evento ao botão de enviar para capturar a molécula e enviar para previsão
+        document.getElementById('send-button').addEventListener('click', async function () {
+            const iframe = document.getElementById('ketcher-iframe');
+            let ketcher = null;
+
+            // Verifica e acessa a API do Ketcher dentro do iframe
+            if ('contentDocument' in iframe)
+                ketcher = iframe.contentWindow.ketcher;
+            else
+                ketcher = document.frames['ifKetcher'].window.ketcher;
+
+            // Obtém a estrutura SMILES da molécula desenhada
+            const moleculeSmiles = await ketcher.getSmiles();
+
+            // Envia a molécula para o servidor para previsão
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ smiles: moleculeSmiles }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Atualiza a página com o resultado da previsão
+                const prediction = data.prediction;
+                document.getElementById('prediction').textContent = `Resultado da Previsão: ${prediction}`;
+            })
+            .catch(error => console.error('Erro:', error));
+        });
+    </script>
+</body>
+
+</html>
